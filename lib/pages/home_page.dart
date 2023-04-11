@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cubit/widgets/app_large_text.dart';
 import 'package:flutter_cubit/widgets/app_text.dart';
 
-import '../../misc/colors.dart';
+import '../misc/colors.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

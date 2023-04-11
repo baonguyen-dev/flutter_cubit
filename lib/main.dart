@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_cubit/cubits/app_cubit_logics.dart';
+import 'package:flutter_cubit/cubits/app_cubits.dart';
+import 'package:flutter_cubit/pages/detail_page.dart';
 import 'package:flutter_cubit/pages/navpages/main_page.dart';
 import 'package:flutter_cubit/pages/welcome_page.dart';
 
@@ -9,7 +13,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  // This widget is the root of your application.   
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,7 +30,10 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MainPage(),
+      home: BlocProvider<AppCubit>(
+        create: (context) => AppCubit(),
+        child: AppCubitLogics(),
+      ),
     );
   }
 }
